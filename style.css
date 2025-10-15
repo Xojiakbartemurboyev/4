@@ -1,8 +1,7 @@
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(135deg, #4e54c8, #8f94fb);
-  color: white;
+  background: linear-gradient(135deg, #a18cd1, #fbc2eb);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -10,54 +9,57 @@ body {
 }
 
 .container {
-  background-color: #ffffff1a;
+  background-color: white;
   padding: 30px;
   border-radius: 15px;
-  width: 400px;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  width: 350px;
+  text-align: center;
 }
 
 h1 {
-  text-align: center;
   margin-bottom: 20px;
+  color: #333;
 }
 
-.translator textarea {
+input[type="text"] {
   width: 100%;
-  height: 80px;
-  margin-bottom: 10px;
   padding: 10px;
-  border: none;
+  margin-bottom: 15px;
   border-radius: 8px;
-  resize: none;
-  font-size: 14px;
+  border: 1px solid #ccc;
+  font-size: 16px;
 }
 
-.options {
+.colors {
   display: flex;
   justify-content: space-between;
   margin-bottom: 15px;
 }
 
-.options select {
-  width: 48%;
-  padding: 8px;
-  border-radius: 8px;
-  border: none;
+.colors div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 14px;
 }
 
-button#translateBtn {
-  width: 100%;
-  padding: 12px;
-  background-color: #3b82f6;
-  border: none;
-  border-radius: 8px;
+button {
+  background-color: #ff5722;
   color: white;
-  font-size: 16px;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
   cursor: pointer;
+  font-size: 16px;
+  margin-bottom: 20px;
 }
 
-button#translateBtn:hover {
-  background-color: #2563eb;
+button:hover {
+  background-color: #e64a19;
+}
+
+.qrcode {
+  display: flex;
+  justify-content: center;
 }

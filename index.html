@@ -2,31 +2,33 @@
 <html lang="uz">
 <head>
   <meta charset="UTF-8">
-  <title>Tarjimon Dastur</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QR Kod Yaratuvchi</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="container">
-    <h1>Tarjimon Dastur</h1>
-    <div class="translator">
-      <textarea id="inputText" placeholder="Matnni kiriting..."></textarea>
-      <textarea id="outputText" placeholder="Tarjima natijasi..." readonly></textarea>
-      <div class="options">
-        <select id="fromLang">
-          <option value="en">Inglizcha</option>
-          <option value="uz">O'zbekcha</option>
-          <option value="af">Afrikaans</option>
-        </select>
-        <select id="toLang">
-          <option value="uz">O'zbekcha</option>
-          <option value="en">Inglizcha</option>
-          <option value="af">Afrikaans</option>
-        </select>
+    <h1>QR Kod Yaratuvchi</h1>
+    
+    <input type="text" id="qrText" placeholder="URL yoki matn kiriting">
+
+    <div class="colors">
+      <div>
+        <label>QR Kod rangi:</label>
+        <input type="color" id="qrColor" value="#000000">
       </div>
-      <button id="translateBtn">Tarjima qilish</button>
+      <div>
+        <label>Fon rangi:</label>
+        <input type="color" id="bgColor" value="#ffffff">
+      </div>
     </div>
+
+    <button onclick="generateQRCode()">QR Kod yaratish</button>
+
+    <div id="qrcode" class="qrcode"></div>
   </div>
 
+  <script src="https://cdn.jsdelivr.net/npm/qrcodejs/qrcode.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

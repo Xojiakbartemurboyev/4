@@ -1,23 +1,26 @@
-document.getElementById('translateBtn').addEventListener('click', () => {
-  const inputText = document.getElementById('inputText').value;
-  const fromLang = document.getElementById('fromLang').value;
-  const toLang = document.getElementById('toLang').value;
+let qr;
 
-  if (!inputText.trim()) {
-    alert("Iltimos, tarjima qilinadigan matn kiriting.");
+function generateQRCode() {
+  const qrText = document.getElementById('qrText').value;
+  const qrColor = document.getElementById('qrColor').value;
+  const bgColor = document.getElementById('bgColor').value;
+
+  if (!qrText.trim()) {
+    alert("Iltimos, matn yoki URL kiriting.");
     return;
   }
 
-  const url = `https://api.mymemory.translated.net/get?q=${encodeURIComponent(inputText)}&langpair=${fromLang}|${toLang}`;
+  // Eski QR kodni o'chirish
+  const qrContainer = document.getElementById('qrcode');
+  qrContainer.innerHTML = "";
 
-  fetch(url)
-    .then(response => response.json())
-    .then(data => {
-      const translated = data.responseData.translatedText;
-      document.getElementById('outputText').value = translated;
-    })
-    .catch(error => {
-      console.error("Xatolik:", error);
-      alert("Tarjima qilishda xatolik yuz berdi.");
-    });
-});
+  // Yangi QR kod yaratish
+  qr = new QRCode(qrContainer, {
+    text: qrText,
+    width: 200,
+    height: 200,
+    colorDark: qrColor,
+    colorLight: bgColor,
+    correctLevel: QRCode.CorrectLevel.H
+  });
+}
