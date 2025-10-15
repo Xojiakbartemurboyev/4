@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <title>Tarjimon Dastur</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Tarjimon Dastur</h1>
+    <div class="translator">
+      <textarea id="inputText" placeholder="Matnni kiriting..."></textarea>
+      <textarea id="outputText" placeholder="Tarjima natijasi..." readonly></textarea>
+      <div class="options">
+        <select id="fromLang">
+          <option value="en">Inglizcha</option>
+          <option value="uz">O'zbekcha</option>
+          <option value="af">Afrikaans</option>
+        </select>
+        <select id="toLang">
+          <option value="uz">O'zbekcha</option>
+          <option value="en">Inglizcha</option>
+          <option value="af">Afrikaans</option>
+        </select>
+      </div>
+      <button id="translateBtn">Tarjima qilish</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
